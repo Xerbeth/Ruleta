@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "XnikZfLMIui3Ch/s3mgD3MeOXj2a0jZyxDzHP3FqwxdmwGCy3ncCSXtw3m4vBBSXl1gv6niIoduUF4aYYCHPSw==",
+  "success": true,
+  "projectFilePath": "F:\\Documentos\\Prueba Masivian\\Ruleta.API\\Ruleta.Domain.Services\\Ruleta.Domain.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\faibe\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
