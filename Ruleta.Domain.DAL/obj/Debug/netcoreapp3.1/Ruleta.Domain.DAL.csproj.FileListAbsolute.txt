@@ -1,0 +1,12 @@
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\bin\Debug\netcoreapp3.1\Ruleta.Domain.DAL.deps.json
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\bin\Debug\netcoreapp3.1\Ruleta.Domain.DAL.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\obj\Debug\netcoreapp3.1\Ruleta.Domain.DAL.AssemblyInfoInputs.cache
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\obj\Debug\netcoreapp3.1\Ruleta.Domain.DAL.AssemblyInfo.cs
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\bin\Debug\netcoreapp3.1\Ruleta.Domain.DAL.pdb
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\obj\Debug\netcoreapp3.1\Ruleta.Domain.DAL.csprojAssemblyReference.cache
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\obj\Debug\netcoreapp3.1\Ruleta.Domain.DAL.csproj.CoreCompileInputs.cache
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\obj\Debug\netcoreapp3.1\Ruleta.Domain.DAL.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\obj\Debug\netcoreapp3.1\Ruleta.Domain.DAL.pdb
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.pdb
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.DAL\obj\Debug\netcoreapp3.1\Ruleta.Domain.DAL.csproj.CopyComplete
