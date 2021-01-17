@@ -10,3 +10,7 @@ F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Services\bin\Debug\netcor
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Services\obj\Debug\netcoreapp3.1\Ruleta.Domain.Services.csprojAssemblyReference.cache
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Services\bin\Debug\netcoreapp3.1\Ruleta.Domain.BusinessLayer.pdb
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Services\obj\Debug\netcoreapp3.1\Ruleta.Domain.Services.csproj.CopyComplete
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Services\bin\Debug\netcoreapp3.1\Ruleta.Domain.DAL.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Services\bin\Debug\netcoreapp3.1\Ruleta.Domain.DAL.pdb
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Services\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Services\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.pdb

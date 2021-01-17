@@ -97,3 +97,13 @@ F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\obj\Debug\netcoreapp3.1\Rule
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.BusinessLayer.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.BusinessLayer.pdb
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.DAL.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.DAL.pdb
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.pdb

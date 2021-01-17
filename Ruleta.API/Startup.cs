@@ -28,8 +28,11 @@ namespace Ruleta.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddScoped<ITestServices, TestServices>();
-            StartupServices.ConfigureServices(services, "");
+            services.AddScoped<IDocumentTypeServices, DocumentTypeServices>();
+
+            StartupServices.ConfigureServices(services, connectionString);
             services.AddControllers();
         }
 

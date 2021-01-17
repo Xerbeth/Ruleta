@@ -10,8 +10,8 @@ namespace PAI.Domain.Services
         public static void ConfigureServices(IServiceCollection services, string connectionString)
         {
             services.AddScoped<ITestBL, TestBL>();
-
-            //Dependencias internas de la capas de negocio de Administracion
+            services.AddScoped<IDocumentTypeBL, DocumentTypeBL>();
+            
             StartupBusinessLayer.ConfigureServices(services, connectionString);
         }
     }
