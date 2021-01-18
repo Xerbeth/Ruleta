@@ -54,7 +54,7 @@ namespace Ruleta.API.Controllers.Roulette
         }
 
         /// <summary>
-        /// Method to create roulette
+        /// Method to create roulette. POINT 1
         /// </summary>
         /// <returns> Object with the transaction information </returns>
         [HttpPut("CreateRoulette")]
@@ -85,6 +85,11 @@ namespace Ruleta.API.Controllers.Roulette
             }
         }
 
+        /// <summary>
+        /// Method to obtain the information of a roulette by id
+        /// </summary>
+        /// <param name="rouletteId"> Roulette identifier </param>
+        /// <returns> Object with the transaction information </returns>
         [HttpGet("GetRouletteById")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -114,7 +119,7 @@ namespace Ruleta.API.Controllers.Roulette
         }
 
         /// <summary>
-        /// Method to open roulette
+        /// Method to open roulette. POINT 2
         /// </summary>
         /// <returns> Object with the transaction information </returns>
         [HttpPost("RouletteOpening")]
@@ -146,7 +151,7 @@ namespace Ruleta.API.Controllers.Roulette
         }
 
         /// <summary>
-        /// service to get the rules created with the bet status
+        /// service to get the rules created with the bet status. POINT 5
         /// </summary>
         /// <returns> list of roulettes created with their status </returns>
         [HttpGet("GetAllRoulettes")]

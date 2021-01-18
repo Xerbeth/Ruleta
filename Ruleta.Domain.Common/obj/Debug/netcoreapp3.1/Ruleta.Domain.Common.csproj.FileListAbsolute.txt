@@ -1,8 +1,8 @@
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Common\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.deps.json
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Common\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Common\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.pdb
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Common\obj\Debug\netcoreapp3.1\Ruleta.Domain.Common.csproj.CoreCompileInputs.cache
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Common\obj\Debug\netcoreapp3.1\Ruleta.Domain.Common.AssemblyInfoInputs.cache
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Common\obj\Debug\netcoreapp3.1\Ruleta.Domain.Common.AssemblyInfo.cs
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Common\obj\Debug\netcoreapp3.1\Ruleta.Domain.Common.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Common\obj\Debug\netcoreapp3.1\Ruleta.Domain.Common.pdb
-F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.Domain.Common\obj\Debug\netcoreapp3.1\Ruleta.Domain.Common.csproj.CoreCompileInputs.cache

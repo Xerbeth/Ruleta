@@ -30,19 +30,26 @@
         </member>
         <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.CreateRoulette">
             <summary>
-            Method to create roulette
+            Method to create roulette. POINT 1
             </summary>
+            <returns> Object with the transaction information </returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.GetRouletteById(System.String)">
+            <summary>
+            Method to obtain the information of a roulette by id
+            </summary>
+            <param name="rouletteId"> Roulette identifier </param>
             <returns> Object with the transaction information </returns>
         </member>
         <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.RouletteOpening(System.String)">
             <summary>
-            Method to open roulette
+            Method to open roulette. POINT 2
             </summary>
             <returns> Object with the transaction information </returns>
         </member>
         <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.CombineRouletteAndConfiguration">
             <summary>
-            service to get the rules created with the bet status
+            service to get the rules created with the bet status. POINT 5
             </summary>
             <returns> list of roulettes created with their status </returns>
         </member>
