@@ -18,5 +18,17 @@ namespace Ruleta.Domain.BusinessLayer.Interfaces
         /// </summary>
         /// <returns> Object with the transaction information </returns>
         TransactionDTO<long> CreateRoulette();
+        /// <summary>
+        /// Method to consult a roulette by identifier
+        /// </summary>
+        /// <param name="rouletteId"> roulette identifier </param>
+        /// <returns> Object with the transaction information </returns>
+        TransactionDTO<RouletteDTO> GetRouletteById(string rouletteId);
+        /// <summary>
+        /// Method to open roulette
+        /// </summary>
+        /// <param name="rouletteId"> roulette identifier </param>
+        /// <returns> Object with the transaction information </returns>
+        TransactionDTO<bool> RouletteOpening(string rouletteId);
     }
 }

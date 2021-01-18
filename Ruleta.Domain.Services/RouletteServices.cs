@@ -33,5 +33,25 @@ namespace Ruleta.Domain.Services
         {
             return _rouletteBL.CreateRoulette();
         }
+
+        /// <summary>
+        /// Method to consult a roulette by identifier
+        /// </summary>
+        /// <param name="rouletteId"> roulette identifier </param>
+        /// <returns> Object with the transaction information </returns>
+        public TransactionDTO<RouletteDTO> GetRouletteById(string rouletteId)
+        {
+            return _rouletteBL.GetRouletteById(rouletteId);
+        }
+
+        /// <summary>
+        /// Method to open roulette
+        /// </summary>
+        /// <param name="rouletteId"> roulette identifier </param>
+        /// <returns> Object with the transaction information </returns>
+        public TransactionDTO<bool> RouletteOpening(string rouletteId)
+        {
+            return _rouletteBL.RouletteOpening(rouletteId);
+        }
     }
 }

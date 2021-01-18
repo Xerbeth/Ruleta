@@ -90,5 +90,56 @@ namespace Ruleta.Domain.DAL.Repository
                 }
             }
         }
+
+        public RouletteModel GetRouletteById(string rouletteId)
+        {
+            RouletteModel roulette = new RouletteModel();
+            string queryString = "SELECT * FROM develop.Roulette WHERE Id = " + rouletteId + " AND State = 1;";
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {                        
+                        roulette.Id = (long)reader[0];
+                        roulette.Name = reader[1].ToString();
+                        roulette.Code = reader[2].ToString();
+                        roulette.AllowBets = (bool)reader[3];
+                        roulette.State = (bool)reader[4];
+                        roulette.CreationDate = (DateTime)reader[5];
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException("Error 06: Ocurrió un error consultando la base de datos.");
+                }
+
+                return roulette;
+            }
+        }
+
+        public bool RouletteOpening(string rouletteId)
+        {
+            string queryString = "UPDATE develop.Roulette SET AllowBets = 1 WHERE Id = " + rouletteId + " AND state = 1;" ;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                try
+                {
+                    connection.Open();
+                    command.ExecuteReader();
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException("Error 07: Ocurrió un error consultando la base de datos.");
+                }                
+            }
+        }
     }
 }

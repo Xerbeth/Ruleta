@@ -83,6 +83,75 @@ namespace Ruleta.Domain.BusinessLayer
         }
 
         /// <summary>
+        /// Method to consult a roulette by identifier
+        /// </summary>
+        /// <param name="rouletteId"> roulette identifier </param>
+        /// <returns> Object with the transaction information </returns>
+        public TransactionDTO<RouletteDTO> GetRouletteById(string rouletteId)
+        {
+            TransactionDTO<RouletteDTO> transaction = new TransactionDTO<RouletteDTO>();
+            transaction.Data = new RouletteDTO();
+            try
+            {
+                var getRouletteById = _rouletteRepository.GetRouletteById(rouletteId);
+                if (getRouletteById.Id == 0)
+                {
+                    transaction.Status = Common.Status.Failure;
+                    transaction.Message = "No existen la ruleta solicitada.";
+
+                    return transaction;
+                }
+                transaction.Data = new RouletteDTO(getRouletteById.Id, getRouletteById.Name, getRouletteById.Code, getRouletteById.AllowBets);
+            }
+            catch (ArgumentException ex)
+            {
+                transaction.Status = Common.Status.Failure;
+                transaction.Message = ex.Message;
+            }
+
+            return transaction;
+        }
+
+        /// <summary>
+        /// Method to open roulette
+        /// </summary>
+        /// <param name="rouletteId"> roulette identifier </param>
+        /// <returns> Object with the transaction information </returns>
+        public TransactionDTO<bool> RouletteOpening(string rouletteId)
+        {
+            TransactionDTO<bool> transaction = new TransactionDTO<bool>();
+            transaction.Data = true;
+            try
+            {
+                var getRouletteById = GetRouletteById(rouletteId);
+                if (getRouletteById.Data.Id == 0)
+                {
+                    transaction.Data = false;
+                    transaction.Status = getRouletteById.Status;
+                    transaction.Message = getRouletteById.Message;
+                }
+
+                bool rouletteOpening = _rouletteRepository.RouletteOpening(rouletteId);
+                if (!rouletteOpening)
+                {
+                    transaction.Data = rouletteOpening;
+                    transaction.Status = Common.Status.Failure;
+                    transaction.Message = "No fue posible realizar la apertura de la ruleta.";
+
+                    return transaction;
+                }               
+            }
+            catch (ArgumentException ex)
+            {
+                transaction.Data = false;
+                transaction.Status = Common.Status.Failure;
+                transaction.Message = ex.Message;
+            }
+
+            return transaction;
+        }
+
+        /// <summary>
         /// Private method to generate a roulette name
         /// </summary>
         /// <returns> Roulette name </returns>
