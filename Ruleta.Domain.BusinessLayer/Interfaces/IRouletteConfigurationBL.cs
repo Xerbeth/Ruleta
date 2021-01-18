@@ -9,9 +9,9 @@ namespace Ruleta.Domain.BusinessLayer.Interfaces
     public interface IRouletteConfigurationBL
     {
         TransactionDTO<bool> CreateRouletteConfiguration(long rouletteId);
-
         TransactionDTO<List<RouletteConfigurationDTO>> GetAllRouletteConfigurationByRoulette(long rouletteId);
-
         TransactionDTO<List<RouletteConfigurationDTO>> GetAllRouletteConfiguration();
+        TransactionDTO<bool> ValidateNumberByRouletteId(ValidateBetDTO validateBet);
+        TransactionDTO<bool> ValidateColorByRouletteId(ValidateBetDTO validateBet);
     }
 }

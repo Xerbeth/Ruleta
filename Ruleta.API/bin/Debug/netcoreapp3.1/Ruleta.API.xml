@@ -39,9 +39,32 @@
             <param name="playerId"></param>
             <returns></returns>
         </member>
+        <member name="T:Ruleta.API.Controllers.RouletteConfiguration.RouletteConfigurationController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ruleta.API.Controllers.RouletteConfiguration.RouletteConfigurationController.#ctor(Ruleta.Domain.Services.Interfaces.IRouletteConfigurationServices)">
+            <summary>
+            
+            </summary>
+            <param name="rouletteConfigurationServices"></param>
+        </member>
         <member name="M:Ruleta.API.Controllers.RouletteConfiguration.RouletteConfigurationController.GetAllRouletteConfigurationByRoullete(System.Int64)">
             <summary>
             Method to create roulette
+            </summary>
+            <returns> Object with the transaction information </returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.RouletteConfiguration.RouletteConfigurationController.ValidateColorByRouletteId(Ruleta.Domain.Common.DataTransferObject.ValidateBetDTO)">
+            <summary>
+            
+            </summary>
+            <returns> Object with the transaction information </returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.RouletteConfiguration.RouletteConfigurationController.ValidateNumberByRouletteId(Ruleta.Domain.Common.DataTransferObject.ValidateBetDTO)">
+            <summary>
+            
             </summary>
             <returns> Object with the transaction information </returns>
         </member>

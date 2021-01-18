@@ -31,5 +31,15 @@ namespace Ruleta.Domain.Services
         {
             return _rouletteConfigurationBL.GetAllRouletteConfigurationByRoulette(rouletteId);
         }
+
+        public TransactionDTO<bool> ValidateColorByRouletteId(ValidateBetDTO validateBet)
+        {
+            return _rouletteConfigurationBL.ValidateColorByRouletteId(validateBet);
+        }
+
+        public TransactionDTO<bool> ValidateNumberByRouletteId(ValidateBetDTO validateBet)
+        {
+            return _rouletteConfigurationBL.ValidateNumberByRouletteId(validateBet);
+        }
     }
 }

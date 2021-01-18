@@ -112,5 +112,49 @@ namespace Ruleta.Domain.BusinessLayer
 
             return transaction;
         }
+
+        public TransactionDTO<bool> ValidateNumberByRouletteId(ValidateBetDTO validateBet)
+        {
+            TransactionDTO<bool> transaction = new TransactionDTO<bool>();
+            transaction.Data = false;
+            try
+            {
+                transaction.Data = _rouletteConfigurationRepository.ValidateNumberByRouletteId(validateBet);
+                if (!transaction.Data)
+                {
+                    transaction.Status = Common.Status.Failure;
+                    transaction.Message = "La apuesta no es valida debido a que la ruleta no contienen la configuración apostada.";
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                transaction.Status = Common.Status.Failure;
+                transaction.Message = ex.Message;
+            }
+
+            return transaction;
+        }
+
+        public TransactionDTO<bool> ValidateColorByRouletteId(ValidateBetDTO validateBet)
+        {
+            TransactionDTO<bool> transaction = new TransactionDTO<bool>();
+            transaction.Data = false;
+            try
+            {
+                transaction.Data = _rouletteConfigurationRepository.ValidateColorByRouletteId(validateBet);
+                if (!transaction.Data)
+                {
+                    transaction.Status = Common.Status.Failure;
+                    transaction.Message = "La apuesta no es valida debido a que la ruleta no contienen la configuración apostada.";
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                transaction.Status = Common.Status.Failure;
+                transaction.Message = ex.Message;
+            }
+
+            return transaction;
+        }
     }
 }

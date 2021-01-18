@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Ruleta.Domain.Common.DataTransferObject;
 using Ruleta.Domain.Common.Models;
 using Ruleta.Domain.DAL.Repository.Interfaces;
 using System;
@@ -110,6 +111,58 @@ namespace Ruleta.Domain.DAL.Repository
                         connection.Close();
                     }
                 }
+            }
+        }
+
+        public bool ValidateNumberByRouletteId(ValidateBetDTO validateBet)
+        {
+            bool flag = false;
+            string queryString = "SELECT * FROM develop.RouletteConfiguration WHERE rouletteId = " + validateBet.RouletteId + " AND Number = " + validateBet.Bet + " AND state = 1;";
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        flag = true;
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException("Error 11: Ocurrió un error consultando la base de datos.");
+                }
+
+                return flag;
+            }
+        }
+
+        public bool ValidateColorByRouletteId(ValidateBetDTO validateBet)
+        {
+            bool flag = false;
+            string queryString = "SELECT * FROM develop.RouletteConfiguration WHERE rouletteId = " + validateBet.RouletteId + " AND Color = '" + validateBet.Bet + "' AND state = 1;";
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        flag = true;
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException("Error 12: Ocurrió un error consultando la base de datos.");
+                }
+
+                return flag;
             }
         }
     }
