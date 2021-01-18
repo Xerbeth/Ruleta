@@ -42,7 +42,7 @@ namespace Ruleta.Domain.BusinessLayer
             catch (ArgumentException ex)
             {
                 transaction.Status = Common.Status.Failure;
-                transaction.Message = "Ocurrio un error consultando los datos de tipos de documentos.";
+                transaction.Message = ex.Message;
             }
 
             return transaction;

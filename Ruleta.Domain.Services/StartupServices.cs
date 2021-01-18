@@ -14,7 +14,8 @@ namespace PAI.Domain.Services
             services.AddScoped<IDocumentTypeBL, DocumentTypeBL>();
             services.AddScoped<IBetTypeBL, BetTypeBL>();
             services.AddScoped<IRouletteBL, RouletteBL>();
-            services.AddScoped<IRouletteConfigurationBL, RouletteConfigurationBL>();            
+            services.AddScoped<IRouletteConfigurationBL, RouletteConfigurationBL>();
+            services.AddScoped<IPlayerBL,PlayerBL>();
 
             StartupBusinessLayer.ConfigureServices(services, connectionString);
         }

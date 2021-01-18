@@ -10,11 +10,34 @@
             </summary>
             <returns> Object with the transaction information </returns>
         </member>
+        <member name="M:Ruleta.API.Controllers.Bet.BetController.CreateBet(Ruleta.Domain.Common.DataTransferObject.CreateBetDTO)">
+            <summary>
+            Method to creare bets. POINT 4.
+            betType => NMR ó CLR.
+            Value => number ó Color. 
+            Price => $$$.
+            </summary>
+            <returns> Object with the transaction information </returns>
+        </member>
         <member name="M:Ruleta.API.Controllers.DocumentType.DocumentTypeController.GetAllDocumentType">
             <summary>
             Method to get all the records from the DocumentType table
             </summary>
             <returns> Object with the transaction information </returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.Player.PlayerController.GetPlayerBalanceById(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="playerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.Player.PlayerController.GetPlayerById(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="playerId"></param>
+            <returns></returns>
         </member>
         <member name="M:Ruleta.API.Controllers.RouletteConfiguration.RouletteConfigurationController.GetAllRouletteConfigurationByRoullete(System.Int64)">
             <summary>

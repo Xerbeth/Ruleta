@@ -38,6 +38,7 @@ namespace Ruleta.API
             services.AddScoped<IRouletteServices, RouletteServices>();
             services.AddScoped<IRouletteTransactions, RouletteTransactions>();
             services.AddScoped<IRouletteConfigurationServices, RouletteConfigurationServices>();
+            services.AddScoped<IBetTransactions, BetTransactions>();            
             services.AddSingleton(Configuration);
 
             StartupServices.ConfigureServices(services, connectionString);
