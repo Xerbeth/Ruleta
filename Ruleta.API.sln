@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ruleta.Domain.Services", "Ruleta.Domain.Services\Ruleta.Domain.Services.csproj", "{E6C2B80A-F48C-483A-87B7-0C602179BAE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruleta.API", "Ruleta.API\Ruleta.API.csproj", "{D9E8EE0E-181F-4C49-BDCB-F6072AE1C0C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ruleta.API", "Ruleta.API\Ruleta.API.csproj", "{D9E8EE0E-181F-4C49-BDCB-F6072AE1C0C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruleta.Domain.BusinessLayer", "Ruleta.Domain.BusinessLayer\Ruleta.Domain.BusinessLayer.csproj", "{0E51B3FC-2D4F-472D-BA58-7A667DE01866}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ruleta.Domain.BusinessLayer", "Ruleta.Domain.BusinessLayer\Ruleta.Domain.BusinessLayer.csproj", "{0E51B3FC-2D4F-472D-BA58-7A667DE01866}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruleta.Domain.Common", "Ruleta.Domain.Common\Ruleta.Domain.Common.csproj", "{99ECC7D8-8CC1-484B-8CF5-59E1054D9F8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ruleta.Domain.Common", "Ruleta.Domain.Common\Ruleta.Domain.Common.csproj", "{99ECC7D8-8CC1-484B-8CF5-59E1054D9F8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruleta.Domain.DAL", "Ruleta.Domain.DAL\Ruleta.Domain.DAL.csproj", "{E23A03D9-167E-4992-A20F-F736FAC90703}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ruleta.Domain.DAL", "Ruleta.Domain.DAL\Ruleta.Domain.DAL.csproj", "{E23A03D9-167E-4992-A20F-F736FAC90703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruleta.Domain.Transactions", "Ruleta.Domain.Transactions\Ruleta.Domain.Transactions.csproj", "{FA9ED88E-DFED-40B5-B3F3-2FCC028674C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E23A03D9-167E-4992-A20F-F736FAC90703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E23A03D9-167E-4992-A20F-F736FAC90703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E23A03D9-167E-4992-A20F-F736FAC90703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9ED88E-DFED-40B5-B3F3-2FCC028674C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9ED88E-DFED-40B5-B3F3-2FCC028674C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9ED88E-DFED-40B5-B3F3-2FCC028674C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9ED88E-DFED-40B5-B3F3-2FCC028674C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using PAI.Domain.Services;
 using Ruleta.Domain.Services;
 using Ruleta.Domain.Services.Interfaces;
+using Ruleta.Domain.Transactions;
+using Ruleta.Domain.Transactions.Interfaces;
 
 namespace Ruleta.API
 {
@@ -29,10 +31,14 @@ namespace Ruleta.API
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
-            services.AddScoped<ITestServices, TestServices>();
             services.AddScoped<IDocumentTypeServices, DocumentTypeServices>();
+            services.AddScoped<IBetTypeServices, BetTypeServices>();
+            services.AddScoped<IRouletteServices, RouletteServices>();
+            services.AddScoped<IRouletteTransactions, RouletteTransactions>();
+            services.AddSingleton(Configuration);
 
             StartupServices.ConfigureServices(services, connectionString);
+            StartupTransactions.ConfigureServices(services, connectionString);
             services.AddControllers();
         }
 

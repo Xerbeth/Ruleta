@@ -6,7 +6,7 @@ namespace Ruleta.Domain.Common
 {
     public enum Status
     {
-        Success,
-        Failure
+        Failure,
+        Success        
     }
 }

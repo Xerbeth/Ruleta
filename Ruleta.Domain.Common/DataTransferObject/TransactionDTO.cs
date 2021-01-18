@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Ruleta.Domain.Common.DataTransferObject
@@ -12,7 +13,8 @@ namespace Ruleta.Domain.Common.DataTransferObject
         public T Data { get; set; }
         public TransactionDTO() 
         {
-            Status = Status.Failure;
+            Message = "Transacción realizada correctamente.";
+            Status = Status.Success;
         }
     }
 }

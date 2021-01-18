@@ -29,7 +29,6 @@ CREATE TABLE develop.BetType(
 	CreationDate datetime2(7) NOT NULL DEFAULT GETDATE(),
 );
 
-
 /*
 Author: Faiber Torres 
 Date: 17-01-2021
@@ -52,7 +51,7 @@ CREATE TABLE develop.RouletteConfiguration(
 	Id BIGINT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	Number VARCHAR(2) NOT NULL,
 	Color VARCHAR(10) NOT NULL,
-	Code VARCHAR(10) NOT NULL UNIQUE,
+	Code VARCHAR(15) NOT NULL UNIQUE,
 	RouletteId BIGINT NOT NULL,
 	State BIT NOT NULL DEFAULT 1,
 	CreationDate datetime2(7) NOT NULL DEFAULT GETDATE(),

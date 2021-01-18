@@ -19,7 +19,7 @@ namespace Ruleta.Domain.Services
         /// Method to get all the records from the DocumentType table
         /// </summary>
         /// <returns> List of records stored in table </returns>
-        public List<DocumentTypeDTO> GetAllDocumentType()
+        public TransactionDTO<List<DocumentTypeDTO>> GetAllDocumentType()
         {
             return _documentTypeBL.GetAllDocumentType();
         }

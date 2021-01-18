@@ -19,29 +19,33 @@ namespace Ruleta.Domain.BusinessLayer
         /// Method to get all the records from the DocumentType table
         /// </summary>
         /// <returns> List of records stored in table </returns>
-        public List<DocumentTypeDTO> GetAllDocumentType()
+        public TransactionDTO<List<DocumentTypeDTO>> GetAllDocumentType()
         {
+            TransactionDTO<List<DocumentTypeDTO>> transaction = new TransactionDTO<List<DocumentTypeDTO>>();
+            transaction.Data = new List<DocumentTypeDTO>();
             try
             {
-                List<DocumentTypeDTO> documentType = new List<DocumentTypeDTO>();
                 var getDocumentType = _documentTypeRepository.GetAllDocumentType();
                 if (getDocumentType == null || getDocumentType.Count == 0)
                 {
-                    return new List<DocumentTypeDTO>();
+                    transaction.Status = Common.Status.Failure;
+                    transaction.Message = "No existen datos en la base de datos para los tipos de documentos.";
+
+                    return transaction;
                 }
                 foreach (var item in getDocumentType)
                 {
                     DocumentTypeDTO documentTypeDTO = new DocumentTypeDTO(item.Id, item.Name, item.Code);
-                    documentType.Add(documentTypeDTO);
+                    transaction.Data.Add(documentTypeDTO);
                 }
-
-                return documentType;
             }
             catch (ArgumentException ex)
             {
-
-                return null;
+                transaction.Status = Common.Status.Failure;
+                transaction.Message = "Ocurrio un error consultando los datos de tipos de documentos.";
             }
+
+            return transaction;
         }
     }
 }

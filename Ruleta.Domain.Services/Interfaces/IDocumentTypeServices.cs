@@ -11,6 +11,6 @@ namespace Ruleta.Domain.Services.Interfaces
         /// Method to get all the records from the DocumentType table
         /// </summary>
         /// <returns> List of records stored in table </returns>
-        List<DocumentTypeDTO> GetAllDocumentType();
+        TransactionDTO<List<DocumentTypeDTO>> GetAllDocumentType();
     }
 }

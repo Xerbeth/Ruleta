@@ -12,13 +12,9 @@ namespace Ruleta.Domain.BusinessLayer
         public static void ConfigureServices(IServiceCollection services, string connectionString)
         {
             services.AddScoped<IDocumentTypeRepository, DocumentTypeRepository>();
-
-            ////Dependencias internas de la capas de negocio de Administracion
-            ////Contexto de Administracion
-            //services.AddDbContext<PedidosContext>(config =>
-            //{
-            //    config.UseSqlServer(connectionString);
-            //});
+            services.AddScoped<IBetTypeRepository, BetTypeRepository>();
+            services.AddScoped<IRouletteRepository, RouletteRepository>();
+            services.AddScoped<IRouletteConfigurationRepository, RouletteConfigurationRepository>();
         }
     }
 }

@@ -107,3 +107,8 @@ F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Rule
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.DAL.pdb
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.Common.pdb
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.Transactions.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.Transactions.pdb
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll

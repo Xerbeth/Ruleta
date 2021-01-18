@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "E5vKbB9WxhFu8Z0v3iKninO07CuOrCExUX3Mce4XIMaUyNzaeCqBpkrzd27ARJLLyQVK18csxkfJajjsZr0J4A==",
+  "dgSpecHash": "z22FuqFCDYhHnEYQhy6cEUTxVTQElLsdHUE4u014/uWK6E5SJYk0AiuryNJ33PhYENAfpd6aVNz5luuZ0gGxCg==",
   "success": true,
   "projectFilePath": "F:\\Documentos\\Prueba Masivian\\Ruleta.API\\Ruleta.Domain.Services\\Ruleta.Domain.Services.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\faibe\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
+    "C:\\Users\\faibe\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\faibe\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\faibe\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\faibe\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\faibe\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\faibe\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

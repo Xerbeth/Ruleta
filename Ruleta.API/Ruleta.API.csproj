@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ruleta.Domain.Services\Ruleta.Domain.Services.csproj" />
+    <ProjectReference Include="..\Ruleta.Domain.Transactions\Ruleta.Domain.Transactions.csproj" />
   </ItemGroup>
 
   <ItemGroup>
