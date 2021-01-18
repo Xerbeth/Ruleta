@@ -19,7 +19,41 @@ namespace Ruleta.Domain.DAL.Repository
             ConnectionString = Configuration.GetConnectionString("DefaultConnection");
         }
 
-        public List<RouletteConfigurationModel> GetAllRouletteConfigurationByRoullete(long rouletteId)
+        public List<RouletteConfigurationModel> GetAllRouletteConfiguration()
+        {
+            List<RouletteConfigurationModel> listRouletteConfiguration = new List<RouletteConfigurationModel>();
+            string queryString = "SELECT * FROM " + _context + " WHERE state = 1;";
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        RouletteConfigurationModel rouletteConfiguration = new RouletteConfigurationModel();
+                        rouletteConfiguration.Id = (long)reader[0];
+                        rouletteConfiguration.Number = reader[1].ToString();
+                        rouletteConfiguration.Color = reader[2].ToString();
+                        rouletteConfiguration.Code = reader[3].ToString();
+                        rouletteConfiguration.RouletteId = (long)reader[4];
+                        rouletteConfiguration.State = (bool)reader[5];
+                        rouletteConfiguration.CreationDate = (DateTime)reader[6];
+                        listRouletteConfiguration.Add(rouletteConfiguration);
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException("Error 03: Ocurrió un error consultando la base de datos.");
+                }
+
+                return listRouletteConfiguration;
+            }
+        }
+
+        public List<RouletteConfigurationModel> GetAllRouletteConfigurationByRoulette(long rouletteId)
         {
             List<RouletteConfigurationModel> listRouletteConfiguration = new List<RouletteConfigurationModel>();
             string queryString = "SELECT * FROM " + _context + " WHERE rouletteId = "+ rouletteId + " AND state = 1;";

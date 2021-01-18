@@ -10,6 +10,8 @@ namespace Ruleta.Domain.BusinessLayer.Interfaces
     {
         TransactionDTO<bool> CreateRouletteConfiguration(long rouletteId);
 
-        TransactionDTO<List<RouletteConfigurationModel>> GetAllRouletteConfigurationByRoullete(long rouletteId);
+        TransactionDTO<List<RouletteConfigurationDTO>> GetAllRouletteConfigurationByRoulette(long rouletteId);
+
+        TransactionDTO<List<RouletteConfigurationDTO>> GetAllRouletteConfiguration();
     }
 }

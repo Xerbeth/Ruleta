@@ -28,8 +28,7 @@ Date: 17-01-2021
 Description: Data record for the TypeDocument table
 */
 INSERT INTO develop.Roulette (Name, Code)
-VALUES ('Ruleta Americana','RLTTAMRCN'),
-	   ('Ruleta Europea','RLTTERPA');
+VALUES ('Ruleta Americana','RLTTAMRCN');
 
 /*
 Author: Faiber Torres 

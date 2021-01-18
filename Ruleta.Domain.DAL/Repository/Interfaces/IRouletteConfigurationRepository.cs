@@ -17,6 +17,11 @@ namespace Ruleta.Domain.DAL.Repository.Interfaces
         /// </summary>
         /// <param name="rouletteId"> Roulette identifier </param>
         /// <returns> Object with the transaction information </returns>
-        public List<RouletteConfigurationModel> GetAllRouletteConfigurationByRoullete(long rouletteId);
+        public List<RouletteConfigurationModel> GetAllRouletteConfigurationByRoulette(long rouletteId);
+        /// <summary>
+        /// Method to consult the all records
+        /// </summary>
+        /// <returns> Object with the transaction information </returns>
+        public List<RouletteConfigurationModel> GetAllRouletteConfiguration();
     }
 }

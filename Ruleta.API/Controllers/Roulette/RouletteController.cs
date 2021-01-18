@@ -85,7 +85,7 @@ namespace Ruleta.API.Controllers.Roulette
             }
         }
 
-        [HttpPost("GetRouletteById")]
+        [HttpGet("GetRouletteById")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -127,6 +127,38 @@ namespace Ruleta.API.Controllers.Roulette
             try
             {
                 return Ok(_routelleServices.RouletteOpening(rouletteId));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, new ErrorAnswerDTO()
+                {
+                    State = StatusCodes.Status400BadRequest,
+                    Mistakes = new List<ErrorDTO>(new[]
+                    {
+                         new ErrorDTO()
+                         {
+                             Code = "",
+                             Description = ex.Message
+                         }
+                     })
+                });
+            }
+        }
+
+        /// <summary>
+        /// service to get the rules created with the bet status
+        /// </summary>
+        /// <returns> list of roulettes created with their status </returns>
+        [HttpGet("GetAllRoulettes")]
+        [Produces("application/json")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult CombineRouletteAndConfiguration()
+        {
+            try
+            {
+                return Ok(_rouletteTransactions.GetRouletteConfiguration());
             }
             catch (Exception ex)
             {

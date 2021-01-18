@@ -8,7 +8,9 @@ namespace Ruleta.Domain.Services.Interfaces
 {
     public interface IRouletteConfigurationServices
     {
-        TransactionDTO<List<RouletteConfigurationModel>> GetAllRouletteConfigurationByRoullete(long rouletteId);
+        TransactionDTO<List<RouletteConfigurationDTO>> GetAllRouletteConfigurationByRoulette(long rouletteId);
+
+        TransactionDTO<List<RouletteConfigurationDTO>> GetAllRouletteConfiguration();
 
         TransactionDTO<bool> CreateRouletteConfiguration(long rouletteId);
     }

@@ -4,6 +4,8 @@ using Ruleta.Domain.Services.Interfaces;
 using Ruleta.Domain.Transactions.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Transactions;
 
 namespace Ruleta.Domain.Transactions
@@ -20,80 +22,53 @@ namespace Ruleta.Domain.Transactions
             _rouletteConfigurationServices = rouletteConfigurationServices;
         }
 
-        /// <summary>
-        /// Method to create roulette
-        /// </summary>
-        /// <returns> Object with the transaction information </returns>
-        public TransactionDTO<long> CreateRoulette()
+        public TransactionDTO<List<ListRouletteDTO>> GetRouletteConfiguration()
         {
-            TransactionDTO<long> createRoulette = new TransactionDTO<long>();
-            TransactionDTO<bool> rouletteConfiguration = new TransactionDTO<bool>();
-
-            using (TransactionScope scope1 = new TransactionScope())
-            //Default is Required
+            TransactionDTO<List<ListRouletteDTO>> getRouletteConfiguration = new TransactionDTO<List<ListRouletteDTO>>();
+            try
             {
-                using (TransactionScope scope2 = new TransactionScope(TransactionScopeOption.Required))
+                var getAllRoulette = _rouletteServices.GetAllRoulette();
+                if (getAllRoulette.Data.Count==0)
                 {
-                    createRoulette = _rouletteServices.CreateRoulette();
+                    getRouletteConfiguration.Message = getAllRoulette.Message;
+                    getRouletteConfiguration.Status = getAllRoulette.Status;
+
+                    return getRouletteConfiguration;
                 }
+                var getAllRouletteConfigurationByRoullete = _rouletteConfigurationServices.GetAllRouletteConfiguration();
+                if (getAllRouletteConfigurationByRoullete.Data.Count == 0)
+                {
+                    getRouletteConfiguration.Message = getAllRouletteConfigurationByRoullete.Message;
+                    getRouletteConfiguration.Status = getAllRouletteConfigurationByRoullete.Status;
 
-                //using (TransactionScope scope3 = new TransactionScope(TransactionScopeOption.RequiresNew))
-                //{
-                //    TransactionDTO<List<RouletteConfigurationModel>> getAllRouletteConfigurationByRoullete = _rouletteConfigurationServices.GetAllRouletteConfigurationByRoullete(createRoulette.Data);
-                //    if (getAllRouletteConfigurationByRoullete.Data.Count > 0)
-                //    {
-                //        createRoulette.Message = "No es posible crear la ruleta debido a que ya existe el identificador de la misma.";
-                //        createRoulette.Status = Common.Status.Failure;
-                //        return createRoulette;
-                //    }
-
-                //    rouletteConfiguration = _rouletteConfigurationServices.CreateRouletteConfiguration(createRoulette.Data);
-                //    if (rouletteConfiguration.Data == null || !rouletteConfiguration.Data)
-                //    {
-                //        rouletteConfiguration.Message = "Ocurrió un error creando la configuración de la ruleta.";
-                //        rouletteConfiguration.Status = Common.Status.Failure;
-                //    }
-                //}
-                scope1.Complete();
+                    return getRouletteConfiguration;
+                }
+                getRouletteConfiguration.Data = CombineRouletteAndConfiguration(getAllRoulette.Data, getAllRouletteConfigurationByRoullete.Data);
             }
-            return createRoulette;
+            catch (Exception ex)
+            {
+                getRouletteConfiguration.Status = Common.Status.Failure;
+                getRouletteConfiguration.Message = ex.Message;
+            }
+
+            return getRouletteConfiguration;
         }
 
+        private List<ListRouletteDTO> CombineRouletteAndConfiguration(List<RouletteDTO> roulettes, List<RouletteConfigurationDTO> roulettesConfigurations)
+        {
+            var query = from roulette in roulettes
+                    orderby roulette.Id
+                    join roulettesConfiguration in roulettesConfigurations on roulette.Id equals roulettesConfiguration.RouletteId into conf
+                    select new ListRouletteDTO
+                    {
+                        Id = roulette.Id,
+                        Name = roulette.Name,
+                        Code = roulette.Code,
+                        AllowBets = roulette.AllowBets,
+                        Configuration = (from confg in conf orderby confg.Id select confg).ToList()
+                    };
 
-
-
-
-
-
-
-
-
-
-
-
-
-        //try
-        //{
-        //    using (TransactionScope scope = new TransactionScope())
-        //    {
-        //        createRoulette = _rouletteServices.CreateRoulette();
-        //        TransactionDTO<List<RouletteConfigurationModel>> getAllRouletteConfigurationByRoullete = _rouletteConfigurationServices.GetAllRouletteConfigurationByRoullete(createRoulette.Data);
-        //        if (getAllRouletteConfigurationByRoullete.Data.Count > 0)
-        //        {
-        //            createRoulette.Message = "No es posible creo que la ruleta debido a que ya existe el identificador de la misma.";
-        //            createRoulette.Status = Common.Status.Failure;
-        //            return createRoulette;
-        //        }
-        //        scope.Complete();
-        //    }
-        //}
-        //catch (TransactionAbortedException ex)
-        //{
-        //    createRoulette.Status = Common.Status.Failure;
-        //    createRoulette.Message = "Ocurrió un error al momento de crear la ruleta de juego.";
-        //}
-
-        //return createRoulette;
-        //}
+            return query.ToList();
+        }
     }
 }

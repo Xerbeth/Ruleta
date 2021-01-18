@@ -4,6 +4,8 @@ using Ruleta.Domain.Common.Models;
 using Ruleta.Domain.DAL.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Ruleta.Domain.BusinessLayer
@@ -23,7 +25,7 @@ namespace Ruleta.Domain.BusinessLayer
             transaction.Data = false;
             try
             {
-                List<RouletteConfigurationModel> listRouletteConfiguration = _rouletteConfigurationRepository.GetAllRouletteConfigurationByRoullete(rouletteId);
+                List<RouletteConfigurationModel> listRouletteConfiguration = _rouletteConfigurationRepository.GetAllRouletteConfigurationByRoulette(rouletteId);
                 if (listRouletteConfiguration.Count > 0)
                 {
                     transaction.Status = Common.Status.Failure;
@@ -38,32 +40,74 @@ namespace Ruleta.Domain.BusinessLayer
             catch (ArgumentException ex)
             {
                 transaction.Status = Common.Status.Failure;
-                transaction.Message = "Ocurrio un error creando la ruleta de juega.";
+                transaction.Message = ex.Message;
             }
 
             return transaction;
         }
 
-        public TransactionDTO<List<RouletteConfigurationModel>> GetAllRouletteConfigurationByRoullete(long rouletteId)
+        public TransactionDTO<List<RouletteConfigurationDTO>> GetAllRouletteConfigurationByRoulette(long rouletteId)
         {
-            TransactionDTO<List<RouletteConfigurationModel>> transaction = new TransactionDTO<List<RouletteConfigurationModel>>();
-            transaction.Data = new List<RouletteConfigurationModel>();
+            TransactionDTO<List<RouletteConfigurationDTO>> transaction = new TransactionDTO<List<RouletteConfigurationDTO>>();
+            transaction.Data = new List<RouletteConfigurationDTO>();
             try
             {
-                var getAllRoulette = _rouletteConfigurationRepository.GetAllRouletteConfigurationByRoullete(rouletteId);
-                if (getAllRoulette == null || getAllRoulette.Count == 0)
+                var getAllRouletteConfigurationByRoullete = _rouletteConfigurationRepository.GetAllRouletteConfigurationByRoulette(rouletteId);
+                if (getAllRouletteConfigurationByRoullete == null || getAllRouletteConfigurationByRoullete.Count == 0)
                 {
                     transaction.Status = Common.Status.Failure;
                     transaction.Message = "No fue posible obtener los registros de la configuración de la ruleta ruletas.";
 
                     return transaction;
                 }
-                transaction.Data = getAllRoulette;
+                foreach(var item in getAllRouletteConfigurationByRoullete){
+                    RouletteConfigurationDTO rouletteConfiguration = new RouletteConfigurationDTO();
+                    rouletteConfiguration.Id = item.Id;
+                    rouletteConfiguration.Number = item.Number;
+                    rouletteConfiguration.Color = item.Color;
+                    rouletteConfiguration.Code = item.Code;
+                    rouletteConfiguration.RouletteId = item.RouletteId;
+                    transaction.Data.Add(rouletteConfiguration);
+                }
             }
             catch (ArgumentException ex)
             {
                 transaction.Status = Common.Status.Failure;
-                transaction.Message = "Ocurrio un error consultando los registros de la configuración de la ruleta ruletas.";
+                transaction.Message = ex.Message;
+            }
+
+            return transaction;
+        }
+
+        public TransactionDTO<List<RouletteConfigurationDTO>> GetAllRouletteConfiguration()
+        {
+            TransactionDTO<List<RouletteConfigurationDTO>> transaction = new TransactionDTO<List<RouletteConfigurationDTO>>();
+            transaction.Data = new List<RouletteConfigurationDTO>();
+            try
+            {
+                var getAllRouletteConfigurationByRoullete = _rouletteConfigurationRepository.GetAllRouletteConfiguration();
+                if (getAllRouletteConfigurationByRoullete == null || getAllRouletteConfigurationByRoullete.Count == 0)
+                {
+                    transaction.Status = Common.Status.Failure;
+                    transaction.Message = "No fue posible obtener los registros de la configuración de la ruleta ruletas.";
+
+                    return transaction;
+                }
+                foreach (var item in getAllRouletteConfigurationByRoullete)
+                {
+                    RouletteConfigurationDTO rouletteConfiguration = new RouletteConfigurationDTO();
+                    rouletteConfiguration.Id = item.Id;
+                    rouletteConfiguration.Number = item.Number;
+                    rouletteConfiguration.Color = item.Color;
+                    rouletteConfiguration.Code = item.Code;
+                    rouletteConfiguration.RouletteId = item.RouletteId;
+                    transaction.Data.Add(rouletteConfiguration);
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                transaction.Status = Common.Status.Failure;
+                transaction.Message = ex.Message;
             }
 
             return transaction;

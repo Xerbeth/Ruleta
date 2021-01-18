@@ -22,9 +22,14 @@ namespace Ruleta.Domain.Services
             return _rouletteConfigurationBL.CreateRouletteConfiguration(rouletteId);
         }
 
-        public TransactionDTO<List<RouletteConfigurationModel>> GetAllRouletteConfigurationByRoullete(long rouletteId)
+        public TransactionDTO<List<RouletteConfigurationDTO>> GetAllRouletteConfiguration()
         {
-            return _rouletteConfigurationBL.GetAllRouletteConfigurationByRoullete(rouletteId);
+            return _rouletteConfigurationBL.GetAllRouletteConfiguration();
+        }
+
+        public TransactionDTO<List<RouletteConfigurationDTO>> GetAllRouletteConfigurationByRoulette(long rouletteId)
+        {
+            return _rouletteConfigurationBL.GetAllRouletteConfigurationByRoulette(rouletteId);
         }
     }
 }

@@ -7,6 +7,6 @@ namespace Ruleta.Domain.Transactions.Interfaces
 {
     public interface IRouletteTransactions
     {
-        TransactionDTO<long> CreateRoulette();
+        TransactionDTO<List<ListRouletteDTO>> GetRouletteConfiguration();
     }
 }
