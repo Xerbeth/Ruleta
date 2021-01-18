@@ -58,13 +58,13 @@
         </member>
         <member name="M:Ruleta.API.Controllers.RouletteConfiguration.RouletteConfigurationController.ValidateColorByRouletteId(Ruleta.Domain.Common.DataTransferObject.ValidateBetDTO)">
             <summary>
-            
+            Method to validate the color of the bet on the selected roulette
             </summary>
             <returns> Object with the transaction information </returns>
         </member>
         <member name="M:Ruleta.API.Controllers.RouletteConfiguration.RouletteConfigurationController.ValidateNumberByRouletteId(Ruleta.Domain.Common.DataTransferObject.ValidateBetDTO)">
             <summary>
-            
+            Method to validate the number of the bet on the selected roulette
             </summary>
             <returns> Object with the transaction information </returns>
         </member>
@@ -80,14 +80,14 @@
             </summary>
             <returns> Object with the transaction information </returns>
         </member>
-        <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.GetRouletteById(System.String)">
+        <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.GetRouletteById(System.Int64)">
             <summary>
             Method to obtain the information of a roulette by id
             </summary>
             <param name="rouletteId"> Roulette identifier </param>
             <returns> Object with the transaction information </returns>
         </member>
-        <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.RouletteOpening(System.String)">
+        <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.RouletteOpening(System.Int64)">
             <summary>
             Method to open roulette. POINT 2
             </summary>

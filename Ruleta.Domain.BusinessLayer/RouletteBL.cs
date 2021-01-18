@@ -87,7 +87,7 @@ namespace Ruleta.Domain.BusinessLayer
         /// </summary>
         /// <param name="rouletteId"> roulette identifier </param>
         /// <returns> Object with the transaction information </returns>
-        public TransactionDTO<RouletteDTO> GetRouletteById(string rouletteId)
+        public TransactionDTO<RouletteDTO> GetRouletteById(long rouletteId)
         {
             TransactionDTO<RouletteDTO> transaction = new TransactionDTO<RouletteDTO>();
             transaction.Data = new RouletteDTO();
@@ -117,7 +117,7 @@ namespace Ruleta.Domain.BusinessLayer
         /// </summary>
         /// <param name="rouletteId"> roulette identifier </param>
         /// <returns> Object with the transaction information </returns>
-        public TransactionDTO<bool> RouletteOpening(string rouletteId)
+        public TransactionDTO<bool> RouletteOpening(long rouletteId)
         {
             TransactionDTO<bool> transaction = new TransactionDTO<bool>();
             transaction.Data = true;
@@ -144,6 +144,37 @@ namespace Ruleta.Domain.BusinessLayer
             catch (ArgumentException ex)
             {
                 transaction.Data = false;
+                transaction.Status = Common.Status.Failure;
+                transaction.Message = ex.Message;
+            }
+
+            return transaction;
+        }
+
+        /// <summary>
+        /// Method to validate the state of the roulette wheel to place bets
+        /// </summary>
+        /// <param name="rouletteId"> roulette identifier </param>
+        /// <returns> Object with the transaction information </returns>
+        public TransactionDTO<bool> ValidateRouletteStatus(long rouletteId)
+        {
+            TransactionDTO<bool> transaction = new TransactionDTO<bool>();
+            transaction.Data = false;
+            try
+            {
+                var getRouletteById = _rouletteRepository.GetRouletteById(rouletteId);
+                if (getRouletteById.Id == 0)
+                {
+                    transaction.Status = Common.Status.Failure;
+                    transaction.Message = "No existen la ruleta solicitada.";
+
+                    return transaction;
+                }
+                transaction.Message = (getRouletteById.AllowBets) ? transaction.Message : "Lo sentimos, la ruleta no se encuentra disponible para apuestas.";
+                transaction.Data = getRouletteById.AllowBets;
+            }
+            catch (ArgumentException ex)
+            {
                 transaction.Status = Common.Status.Failure;
                 transaction.Message = ex.Message;
             }

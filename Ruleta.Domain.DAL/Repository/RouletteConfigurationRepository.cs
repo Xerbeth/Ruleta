@@ -117,7 +117,8 @@ namespace Ruleta.Domain.DAL.Repository
         public bool ValidateNumberByRouletteId(ValidateBetDTO validateBet)
         {
             bool flag = false;
-            string queryString = "SELECT * FROM develop.RouletteConfiguration WHERE rouletteId = " + validateBet.RouletteId + " AND Number = " + validateBet.Bet + " AND state = 1;";
+            string queryString = "SELECT * FROM develop.RouletteConfiguration WHERE rouletteId = " + 
+                                  validateBet.RouletteId + " AND Number = " + validateBet.Bet + " AND state = 1;";
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -143,7 +144,8 @@ namespace Ruleta.Domain.DAL.Repository
         public bool ValidateColorByRouletteId(ValidateBetDTO validateBet)
         {
             bool flag = false;
-            string queryString = "SELECT * FROM develop.RouletteConfiguration WHERE rouletteId = " + validateBet.RouletteId + " AND Color = '" + validateBet.Bet + "' AND state = 1;";
+            string queryString = "SELECT * FROM develop.RouletteConfiguration WHERE rouletteId = " 
+                                  + validateBet.RouletteId + " AND Color = '" + validateBet.Bet + "' AND state = 1;";
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);

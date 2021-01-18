@@ -12,5 +12,11 @@ namespace Ruleta.Domain.Services.Interfaces
         /// </summary>
         /// <returns> object with the transaction information </returns>
         TransactionDTO<List<BetTypeDTO>> GetAllBetType();
+        /// <summary>
+        /// method to get the type of bet by the code of the bet
+        /// </summary>
+        /// <param name="code"> bet code </param>
+        /// <returns> Object with the transaction information  </returns>
+        TransactionDTO<BetTypeDTO> GetBetTypeByCode(string code);
     }
 }

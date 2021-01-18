@@ -88,12 +88,13 @@ CREATE TABLE develop.Bet(
 	Id BIGINT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	PlayerId BIGINT NOT NULL,
 	BetTypeId BIGINT NOT NULL,
-	RouletteConfigurationId BIGINT NOT NULL,
-	Value FLOAT NOT NULL,
-	Prize FLOAT NULL,	
+	RouletteId BIGINT NOT NULL,
+	Bet VARCHAR(10) NOT NULL,
+	Prize FLOAT NULL,
+	Profits FlOAT NULL,
 	State BIT NOT NULL DEFAULT 1,
 	CreationDate datetime2(7) NOT NULL DEFAULT GETDATE(),
 	FOREIGN KEY (PlayerId) REFERENCES Develop.Player (Id),
 	FOREIGN KEY (BetTypeId) REFERENCES Develop.BetType (Id),
-	FOREIGN KEY (RouletteConfigurationId) REFERENCES Develop.RouletteConfiguration (Id)
+	FOREIGN KEY (RouletteId) REFERENCES Develop.Roulette (Id)
 );

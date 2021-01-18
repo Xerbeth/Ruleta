@@ -24,5 +24,14 @@ namespace Ruleta.Domain.Services
         {
             return _betTypeBL.GetAllBetType();
         }
+        /// <summary>
+        /// method to get the type of bet by the code of the bet
+        /// </summary>
+        /// <param name="code"> bet code </param>
+        /// <returns> Object with the transaction information  </returns>
+        public TransactionDTO<BetTypeDTO> GetBetTypeByCode(string code)
+        {
+            return _betTypeBL.GetBetTypeByCode(code);
+        }
     }
 }

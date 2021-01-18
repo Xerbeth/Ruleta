@@ -12,5 +12,6 @@ namespace Ruleta.Domain.DAL.Repository.Interfaces
         /// </summary>
         /// <returns> Object with the transaction information </returns>
         List<BetTypeModel> GetAllBetType();
+        BetTypeModel GetBetTypeByCode(string code);
     }
 }

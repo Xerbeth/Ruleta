@@ -50,3 +50,21 @@ BEGIN
 	END
 END
 GO
+
+CREATE PROCEDURE develop.CreateBet
+	@PlayerId BIGINT,
+	@BetTypeId BIGINT,
+	@RouletteId BIGINT,
+	@Bet VARCHAR(10),
+	@Prize FLOAT,
+	@Id INT = NULL OUTPUT
+AS
+BEGIN
+	BEGIN 
+		SET NOCOUNT ON;
+		INSERT INTO develop.Bet (PlayerId, BetTypeId, RouletteId, Bet, Prize)
+		VALUES (@PlayerId, @BetTypeId, @RouletteId, @Bet, @Prize);
+		SET @Id = SCOPE_IDENTITY();
+	END
+END
+GO

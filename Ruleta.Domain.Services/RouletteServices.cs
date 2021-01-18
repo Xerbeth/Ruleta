@@ -39,7 +39,7 @@ namespace Ruleta.Domain.Services
         /// </summary>
         /// <param name="rouletteId"> roulette identifier </param>
         /// <returns> Object with the transaction information </returns>
-        public TransactionDTO<RouletteDTO> GetRouletteById(string rouletteId)
+        public TransactionDTO<RouletteDTO> GetRouletteById(long rouletteId)
         {
             return _rouletteBL.GetRouletteById(rouletteId);
         }
@@ -49,9 +49,18 @@ namespace Ruleta.Domain.Services
         /// </summary>
         /// <param name="rouletteId"> roulette identifier </param>
         /// <returns> Object with the transaction information </returns>
-        public TransactionDTO<bool> RouletteOpening(string rouletteId)
+        public TransactionDTO<bool> RouletteOpening(long rouletteId)
         {
             return _rouletteBL.RouletteOpening(rouletteId);
+        }
+        /// <summary>
+        /// Method to validate the state of the roulette wheel to place bets
+        /// </summary>
+        /// <param name="rouletteId"> roulette identifier </param>
+        /// <returns> Object with the transaction information </returns>
+        public TransactionDTO<bool> ValidateRouletteStatus(long rouletteId)
+        {
+            return _rouletteBL.ValidateRouletteStatus(rouletteId);
         }
     }
 }

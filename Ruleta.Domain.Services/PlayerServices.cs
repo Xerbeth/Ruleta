@@ -21,5 +21,10 @@ namespace Ruleta.Domain.Services
         {
             return _playerBL.GetPlayerById(playerId);
         }
+
+        public TransactionDTO<bool> ValidatePlayerBalance(ValidateBalancePlayerId validateBalancePlayerId)
+        {
+            return _playerBL.ValidatePlayerBalance(validateBalancePlayerId);
+        }
     }
 }

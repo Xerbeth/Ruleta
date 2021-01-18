@@ -58,5 +58,30 @@ namespace Ruleta.Domain.BusinessLayer
 
             return transaction;
         }
+
+        public TransactionDTO<bool> ValidatePlayerBalance(ValidateBalancePlayerId validateBalancePlayerId)
+        {
+            TransactionDTO<bool> transaction = new TransactionDTO<bool>();
+            transaction.Data = false;
+            try
+            {
+                var balance = GetPlayerBalanceById(validateBalancePlayerId.PlayerId);
+                if ((balance.Data - validateBalancePlayerId.Price) < 0)
+                {
+                    transaction.Status = Common.Status.Failure;
+                    transaction.Message = "Saldo insuficiente para realizar la puesta.";
+
+                    return transaction;
+                }
+                transaction.Data = true;
+            }
+            catch (ArgumentException ex)
+            {
+                transaction.Status = Common.Status.Failure;
+                transaction.Message = ex.Message;
+            }
+
+            return transaction;
+        }
     }
 }

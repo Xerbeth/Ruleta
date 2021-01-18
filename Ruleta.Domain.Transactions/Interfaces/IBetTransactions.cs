@@ -7,6 +7,6 @@ namespace Ruleta.Domain.Transactions.Interfaces
 {
     public interface IBetTransactions
     {
-        string CreateBet(CreateBetDTO createBet);
+        TransactionDTO<string> CreateBet(CreateBetDTO createBet);
     }
 }

@@ -16,6 +16,7 @@ namespace Ruleta.Domain.BusinessLayer
             services.AddScoped<IRouletteRepository, RouletteRepository>();
             services.AddScoped<IRouletteConfigurationRepository, RouletteConfigurationRepository>();
             services.AddScoped<IPlayerRepository, PlayerRepository>();
+            services.AddScoped<IBetRepository, BetRepository>();            
         }
     }
 }

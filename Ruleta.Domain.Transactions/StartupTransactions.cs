@@ -11,7 +11,9 @@ namespace Ruleta.Domain.Transactions
         {
             services.AddScoped<IRouletteServices, RouletteServices>();
             services.AddScoped<IRouletteConfigurationServices, RouletteConfigurationServices>();
-            services.AddScoped<IPlayerServices, PlayerServices>();
+            services.AddScoped<IPlayerServices, PlayerServices>(); 
+            services.AddScoped<IBetTypeServices, BetTypeServices>();
+            services.AddScoped<IBetServices, BetServices>();
 
             StartupServices.ConfigureServices(services, connectionString);
         }

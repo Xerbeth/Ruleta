@@ -91,7 +91,7 @@ namespace Ruleta.Domain.DAL.Repository
             }
         }
 
-        public RouletteModel GetRouletteById(string rouletteId)
+        public RouletteModel GetRouletteById(long rouletteId)
         {
             RouletteModel roulette = new RouletteModel();
             string queryString = "SELECT * FROM develop.Roulette WHERE Id = " + rouletteId + " AND State = 1;";
@@ -122,7 +122,7 @@ namespace Ruleta.Domain.DAL.Repository
             }
         }
 
-        public bool RouletteOpening(string rouletteId)
+        public bool RouletteOpening(long rouletteId)
         {
             string queryString = "UPDATE develop.Roulette SET AllowBets = 1 WHERE Id = " + rouletteId + " AND state = 1;" ;
             using (SqlConnection connection = new SqlConnection(ConnectionString))

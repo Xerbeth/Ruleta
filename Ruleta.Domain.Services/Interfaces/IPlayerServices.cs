@@ -9,5 +9,6 @@ namespace Ruleta.Domain.Services.Interfaces
     {
         TransactionDTO<PlayerDTO> GetPlayerById(long playerId);
         TransactionDTO<float> GetPlayerBalanceById(long playerId);
+        TransactionDTO<bool> ValidatePlayerBalance(ValidateBalancePlayerId validateBalancePlayerId);
     }
 }

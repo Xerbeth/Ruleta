@@ -23,12 +23,18 @@ namespace Ruleta.Domain.BusinessLayer.Interfaces
         /// </summary>
         /// <param name="rouletteId"> roulette identifier </param>
         /// <returns> Object with the transaction information </returns>
-        TransactionDTO<RouletteDTO> GetRouletteById(string rouletteId);
+        TransactionDTO<RouletteDTO> GetRouletteById(long rouletteId);
         /// <summary>
         /// Method to open roulette
         /// </summary>
         /// <param name="rouletteId"> roulette identifier </param>
         /// <returns> Object with the transaction information </returns>
-        TransactionDTO<bool> RouletteOpening(string rouletteId);
+        TransactionDTO<bool> RouletteOpening(long rouletteId);
+        /// <summary>
+        /// Method to validate the state of the roulette wheel to place bets
+        /// </summary>
+        /// <param name="rouletteId"> roulette identifier </param>
+        /// <returns> Object with the transaction information </returns>
+        TransactionDTO<bool> ValidateRouletteStatus(long rouletteId);
     }
 }

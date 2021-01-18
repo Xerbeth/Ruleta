@@ -10,7 +10,7 @@ namespace Ruleta.Domain.DAL.Repository.Interfaces
     {
         List<RouletteModel> GetAllRoulette();
         long CreateRoulette(RouletteModel rouletteModel);
-        RouletteModel GetRouletteById(string rouletteId);
-        bool RouletteOpening(string rouletteId);        
+        RouletteModel GetRouletteById(long rouletteId);
+        bool RouletteOpening(long rouletteId);        
     }
 }

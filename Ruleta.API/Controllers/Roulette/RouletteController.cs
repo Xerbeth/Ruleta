@@ -95,7 +95,7 @@ namespace Ruleta.API.Controllers.Roulette
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult GetRouletteById(string rouletteId)
+        public ActionResult GetRouletteById(long rouletteId)
         {
             try
             {
@@ -127,7 +127,7 @@ namespace Ruleta.API.Controllers.Roulette
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult RouletteOpening(string rouletteId)
+        public ActionResult RouletteOpening(long rouletteId)
         {
             try
             {

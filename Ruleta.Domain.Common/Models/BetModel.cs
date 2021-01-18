@@ -8,9 +8,10 @@ namespace Ruleta.Domain.Common.Models
         public long Id { get; set; }
         public long PlayerId { get; set; }
         public long BetTypeId { get; set; }
-        public long RouletteConfigurationId { get; set; }
-        public float Value { get; set; }
+        public long RouletteId { get; set; }
+        public string Bet { get; set; }
         public float Prize { get; set; }
+        public float Profits { get; set; }
         public bool State { get; set; }
         public DateTime CreationDate { get; set; }
         #endregion
@@ -18,14 +19,15 @@ namespace Ruleta.Domain.Common.Models
         #region Methods
         public BetModel() { }
 
-        public BetModel(long id, long playerId, long betTypeId, long rouletteConfigurationId, float value, float prize, DateTime creationDate, bool? state)
+        public BetModel(long id, long playerId, long betTypeId, long rouletteId, string bet, float prize, float profits, DateTime creationDate, bool? state)
         {
             Id = id;
             PlayerId = playerId;
             BetTypeId = betTypeId;
-            RouletteConfigurationId = rouletteConfigurationId;
-            Value = value;
+            RouletteId = rouletteId;
+            Bet = bet;
             Prize = prize;
+            Profits = profits;
             State = (state == null) ? false : true;
             CreationDate = creationDate;
         }
