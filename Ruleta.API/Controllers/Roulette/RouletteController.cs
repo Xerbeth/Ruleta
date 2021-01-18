@@ -25,7 +25,39 @@ namespace Ruleta.API.Controllers.Roulette
         /// Method to create roulette
         /// </summary>
         /// <returns> Object with the transaction information </returns>
-        [HttpGet("CreateRoulette")]
+        [HttpGet("GetAllRoulette")]
+        [Produces("application/json")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult GetAllRoulette()
+        {
+            try
+            {
+                return Ok(_routelleServices.GetAllRoulette());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, new ErrorAnswerDTO()
+                {
+                    State = StatusCodes.Status400BadRequest,
+                    Mistakes = new List<ErrorDTO>(new[]
+                    {
+                         new ErrorDTO()
+                         {
+                             Code = "",
+                             Description = ex.Message
+                         }
+                     })
+                });
+            }
+        }
+
+        /// <summary>
+        /// Method to create roulette
+        /// </summary>
+        /// <returns> Object with the transaction information </returns>
+        [HttpPut("CreateRoulette")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -51,7 +83,6 @@ namespace Ruleta.API.Controllers.Roulette
                      })
                 });
             }
-        }        
-
+        }      
     }
 }

@@ -40,15 +40,16 @@ namespace Ruleta.Domain.DAL.Repository
                         roulette.Id = (long)reader[0];
                         roulette.Name = reader[1].ToString();
                         roulette.Code = reader[2].ToString();
-                        roulette.State = (bool)reader[3];
-                        roulette.CreationDate = (DateTime)reader[4];
+                        roulette.AllowBets = (bool)reader[3];
+                        roulette.State = (bool)reader[4];
+                        roulette.CreationDate = (DateTime)reader[5];
                         listRoulette.Add(roulette);
                     }
                     reader.Close();
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    throw new ArgumentException("Error 05: Ocurrió un error consultando la base de datos.");
                 }
 
                 return listRoulette;
@@ -78,7 +79,7 @@ namespace Ruleta.Domain.DAL.Repository
                     }
                     catch (Exception ex)
                     {
-                        //MessageBox.Show("Customer ID was not returned. Account could not be created.");
+                        throw new ArgumentException("Error 06: Ocurrió un error consultando la base de datos.");
                     }
                     finally
                     {

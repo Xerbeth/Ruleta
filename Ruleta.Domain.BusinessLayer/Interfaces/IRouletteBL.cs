@@ -11,8 +11,8 @@ namespace Ruleta.Domain.BusinessLayer.Interfaces
         /// <summary>
         /// Method to get all roulette records
         /// </summary>
-        /// <returns> List of records </returns>
-        TransactionDTO<List<RouletteModel>> GetAllRoulette();
+        /// <returns> Object with the transaction information </returns>
+        TransactionDTO<List<RouletteDTO>> GetAllRoulette();
         /// <summary>
         /// Method to create roulette
         /// </summary>

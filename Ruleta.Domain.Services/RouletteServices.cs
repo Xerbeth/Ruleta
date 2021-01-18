@@ -17,6 +17,15 @@ namespace Ruleta.Domain.Services
         }
 
         /// <summary>
+        /// Method to get all roulette records
+        /// </summary>
+        /// <returns> Object with the transaction information </returns>
+        public TransactionDTO<List<RouletteDTO>> GetAllRoulette()
+        {
+            return _rouletteBL.GetAllRoulette();
+        }
+
+        /// <summary>
         /// Method to create roulette
         /// </summary>
         /// <returns> Object with the transaction information </returns>

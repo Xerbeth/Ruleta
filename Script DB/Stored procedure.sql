@@ -1,3 +1,5 @@
+CREATE SCHEMA develop;
+GO
 CREATE PROCEDURE develop.CreateRoulette
 	@Name VARCHAR(50),
 	@Code VARCHAR(10),

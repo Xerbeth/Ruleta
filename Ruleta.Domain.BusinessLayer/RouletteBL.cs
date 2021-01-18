@@ -43,7 +43,7 @@ namespace Ruleta.Domain.BusinessLayer
             catch (ArgumentException ex)
             {
                 transaction.Status = Common.Status.Failure;
-                transaction.Message = "Ocurrio un error creando la ruleta de juega.";
+                transaction.Message = ex.Message;
             }
 
             return transaction;
@@ -53,10 +53,10 @@ namespace Ruleta.Domain.BusinessLayer
         /// Method to get all roulette records
         /// </summary>
         /// <returns> Object with the transaction information </returns>
-        public TransactionDTO<List<RouletteModel>> GetAllRoulette()
+        public TransactionDTO<List<RouletteDTO>> GetAllRoulette()
         {
-            TransactionDTO<List<RouletteModel>> transaction = new TransactionDTO<List<RouletteModel>>();
-            transaction.Data = new List<RouletteModel>(); 
+            TransactionDTO<List<RouletteDTO>> transaction = new TransactionDTO<List<RouletteDTO>>();
+            transaction.Data = new List<RouletteDTO>(); 
             try
             {
                 var getAllRoulette = _rouletteRepository.GetAllRoulette();
@@ -67,12 +67,16 @@ namespace Ruleta.Domain.BusinessLayer
 
                     return transaction;
                 }
-                transaction.Data = getAllRoulette;
+                foreach (var item in getAllRoulette)
+                {
+                    RouletteDTO roulette = new RouletteDTO(item.Id, item.Name, item.Code, item.AllowBets);
+                    transaction.Data.Add(roulette);
+                }
             }
             catch (ArgumentException ex)
             {
                 transaction.Status = Common.Status.Failure;
-                transaction.Message = "Ocurrio un error consultando los registros de las ruletas.";
+                transaction.Message = ex.Message;
             }
 
             return transaction;

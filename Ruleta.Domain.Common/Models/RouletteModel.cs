@@ -4,6 +4,9 @@ namespace Ruleta.Domain.Common.Models
 {
     public class RouletteModel : BaseModel
     {
+        #region Properties
+        public bool AllowBets { get; set; }
+        #endregion
         #region Methods
         public RouletteModel() { }
 
