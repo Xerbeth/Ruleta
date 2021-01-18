@@ -92,8 +92,6 @@ F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\tr\M
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\obj\Debug\netcoreapp3.1\Ruleta.API.csprojAssemblyReference.cache
-F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\obj\Debug\netcoreapp3.1\Ruleta.API.csproj.CoreCompileInputs.cache
-F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\obj\Debug\netcoreapp3.1\Ruleta.API.MvcApplicationPartsAssemblyInfo.cache
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.BusinessLayer.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.Domain.BusinessLayer.pdb
@@ -112,3 +110,11 @@ F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Rule
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\obj\Debug\netcoreapp3.1\Ruleta.API.csproj.CoreCompileInputs.cache
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\obj\Debug\netcoreapp3.1\Ruleta.API.MvcApplicationPartsAssemblyInfo.cs
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\obj\Debug\netcoreapp3.1\Ruleta.API.MvcApplicationPartsAssemblyInfo.cache
+F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\bin\Debug\netcoreapp3.1\Ruleta.API.xml

@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>F:\Documentos\Prueba Masivian\Ruleta.API\Ruleta.API\Ruleta.API.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Ruleta.Domain.Services\Ruleta.Domain.Services.csproj" />
     <ProjectReference Include="..\Ruleta.Domain.Transactions\Ruleta.Domain.Transactions.csproj" />
@@ -11,6 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
 

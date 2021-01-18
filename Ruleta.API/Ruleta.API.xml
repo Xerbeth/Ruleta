@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ruleta.API</name>
+    </assembly>
+    <members>
+        <member name="M:Ruleta.API.Controllers.BetType.BetTypeController.GetAllBetType">
+            <summary>
+            Method to get all the records from the BetType table
+            </summary>
+            <returns> Object with the transaction information </returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.DocumentType.DocumentTypeController.GetAllDocumentType">
+            <summary>
+            Method to get all the records from the DocumentType table
+            </summary>
+            <returns> Object with the transaction information </returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.RouletteConfiguration.RouletteConfigurationController.GetAllRouletteConfigurationByRoullete(System.Int64)">
+            <summary>
+            Method to create roulette
+            </summary>
+            <returns> Object with the transaction information </returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.GetAllRoulette">
+            <summary>
+            Method to create roulette
+            </summary>
+            <returns> Object with the transaction information </returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.CreateRoulette">
+            <summary>
+            Method to create roulette
+            </summary>
+            <returns> Object with the transaction information </returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.RouletteOpening(System.String)">
+            <summary>
+            Method to open roulette
+            </summary>
+            <returns> Object with the transaction information </returns>
+        </member>
+        <member name="M:Ruleta.API.Controllers.Roulette.RouletteController.CombineRouletteAndConfiguration">
+            <summary>
+            service to get the rules created with the bet status
+            </summary>
+            <returns> list of roulettes created with their status </returns>
+        </member>
+    </members>
+</doc>
